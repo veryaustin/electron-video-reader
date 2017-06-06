@@ -9,11 +9,32 @@
     <button type="sumbit">Get video info</button>
   </form>
 
+  <h1 id="result"></h1>
+
+<!-- Basic Inline Script -->
   <script>
-    document.querySelector('form').addEventListener('submit', (event) =>{
+    // Import Electron to use allow inter-process communication in mainWindow
+    const electron = require('electron');
+    // Destructure ipcRender off of the electron object.
+    const { ipcRenderer } = electron;
+
+    // Listen to the form button submit and disable the default form submit
+    document.querySelector('form').addEventListener('submit', (event) => {
       event.preventDefault();
-      const file = document.querySelector('input').files[0];
       
+      // Select the input field and pull off the path property of the first file selected
+      const { path } = document.querySelector('input').files[0];
+      
+      // Use inter-process communication to send the file path name from the main window to the electron process using a "video:submit" event
+      ipcRenderer.send('video:submit', path)
+    });
+
+
+    // Listen for the "video:metadata" event to sent by the electron process via inter-process communication
+    ipcRenderer.on('video:metadata', (event, duration) => {
+
+      // Select the H1 id of "result" and push the duration sent from the video:metadata event
+      document.querySelector('#result').innerHTML = `Video is ${duration} seconds`;
     });
   </script>
 </body>
