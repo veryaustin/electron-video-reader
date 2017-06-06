@@ -1,0 +1,24 @@
+{
+  "name": "electron-video-reader",
+  "version": "1.0.0",
+  "description": "Experimental Electron application to learn the initial concepts of the main & render processes by using ffmpeg calculate the length of a video file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veryaustin/electron-video-reader.git"
+  },
+  "keywords": [
+    "electron",
+    "video",
+    "ffmpeg"
+  ],
+  "author": "Austin Lauritsen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/veryaustin/electron-video-reader/issues"
+  },
+  "homepage": "https://github.com/veryaustin/electron-video-reader#readme"
+}
