@@ -4,7 +4,7 @@
   "description": "Experimental Electron application to learn the initial concepts of the main & render processes by using ffmpeg calculate the length of a video file.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "electron": "electron ."
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/veryaustin/electron-video-reader/issues"
   },
-  "homepage": "https://github.com/veryaustin/electron-video-reader#readme"
+  "homepage": "https://github.com/veryaustin/electron-video-reader#readme",
+  "dependencies": {
+    "electron": "^1.6.10"
+  }
 }
