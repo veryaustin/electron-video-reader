@@ -9,7 +9,9 @@ let mainWindow;
 // On App startup
 app.on('ready', () => {
   // Create a new BrowserWindow
-  mainWindow = new BrowserWindow({});
+  mainWindow = new BrowserWindow({
+    title: "Video Reader"
+  });
 
   // Use the node __dirname to load the index.html file into mainWindow using loadURL()
   mainWindow.loadURL(`file://${__dirname}/index.html`);
